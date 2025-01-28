@@ -23,7 +23,7 @@ export default defineConfig({
       scss: {
         // 전역 SCSS 파일 추가
         additionalData: `
-          @use "@/assets/styles/main" as *;
+          @use "@/assets/styles/main.scss" as *;
         `,
       },
     },
