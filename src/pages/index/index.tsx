@@ -37,6 +37,26 @@ function index() {
     }
   };
 
+  // 위의 API방법을 아래처럼 파라미터 객체를 사용하여 적용 가능
+  // const getData = async () => {
+  //   try {
+  //     const response = await axios.get(API_URL, {
+  //       params: {
+  //         query: searchValue,       // 검색어
+  //         client_id: API_KEY,       // API 키
+  //         page: pageValue,          // 페이지 번호
+  //         per_page: PER_PAGE        // 한 페이지당 항목 개수
+  //       }
+  //     });
+  
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error("Error fetching data from Unsplash:", error);
+  //   }
+  // };
+  
+  // fetchPhotos();
+
   const cardList = imgUrls.map((card: CardDTO) => {
     return <Card data={card} key={card.id} />;
   });
