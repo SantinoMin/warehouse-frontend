@@ -1,3 +1,4 @@
+import DetailDialog from '@/components/common/dialog/DetailDialog';
 import CommonFooter from '@/components/common/footer/CommonFooter';
 import CommonNav from '@/components/common/navigation/CommonNav';
 import CommonSearchBar from '@/components/common/searchBar/CommonSearchBar';
@@ -12,11 +13,17 @@ import styles from './styles/index.module.scss';
 import { CardDTO } from './types/card';
 
 function index() {
-  const [imgData, setImgData] = useState<CardDto[]>([]);
-  const imgSelector = useRecoilValue(imageData);
+  const imgSelector = useRecoilValue(imageData); // imageData부분 불러오기 //<<< useRecoilValue에서 ImageDate에서 가져온 데이터를 넣는거 맞는지
+  const [imgData, setImgData] = useState<CardDTO>();
+  const [open, setOpen] = useState<boolean>(false); // 이미지 상세 다이얼로그 발생(관리) state 
+
+  // const cardList = imgData.map((card:CardDTO) => {
+  //     return <Card data={card} key={card.id} handleDialog={setOpen} ></Card>
+
+  // })
 
   const CARD_LIST = imgSelector.data.results.map((card: CardDTO) => {
-    return <Card data={card} key={card.id} />;
+    return <Card data={card} key={card.id} handleDialog={setOpen} handleSetData={setImgData}/>;
   });
 
   return (
@@ -42,6 +49,8 @@ function index() {
 
       {/* 공통 푸터 UI 부분 */}
       <CommonFooter />
+      {open && <DetailDialog data={imgData} handleDialog={setOpen} />}
+      
     </div>
   );
 }
