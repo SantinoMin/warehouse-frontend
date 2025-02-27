@@ -2,7 +2,7 @@ import DetailDialog from '@/components/common/dialog/DetailDialog';
 import CommonFooter from '@/components/common/footer/CommonFooter';
 import CommonNav from '@/components/common/navigation/CommonNav';
 import CommonSearchBar from '@/components/common/searchBar/CommonSearchBar';
-import { Suspense, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import CommonHeader from '../../components/common/header/CommonHeader';
 import Loading from './components/Loading';
 //CSS
@@ -28,8 +28,7 @@ function index() {
     })  
     return result
   } else {
-        return 
-          <Loading />
+        return <Loading />
           
         // path통해서 imgSelector의 state가 hasValue를 가지기 전에 loading...텍스트 출력됨 
         // 만약 hasValue를 가지는데에 3초가 걸린다면, 3초 전까지는 loading... 메시지가 보임
@@ -62,9 +61,9 @@ function index() {
       {/* <CommonFooter /> */}
 
       {/* Suspense 비동기 작업이 완료될 때까지 로딩 상태를 표시 */}
-      <Suspense fallback={<div>로딩 중...</div>}>
+      {/* <Suspense fallback={<div>로딩 중...</div>}> */}
       <CommonFooter />
-      </Suspense>
+      {/* </Suspense> */}
       {open && <DetailDialog data={imgData} handleDialog={setOpen} />}
       
     </div>

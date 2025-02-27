@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index path="/" element={<MainPage />}></Route>
-        <Route index path="/:id" element={<MainPage />}></Route>
+        <Route index path="/search/:id" element={<MainPage />}></Route>
         <Route index path="/bookmark" element={<BookmarkPage />}></Route>
       </Routes>
     </BrowserRouter>

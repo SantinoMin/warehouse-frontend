@@ -20,8 +20,10 @@ function DetailDialog({data,handleDialog} : Props) {
 
 
   // 다이얼로그 끄기
-const closeDialog = () => {
+const closeDialog = (event: any) => {
   handleDialog(false);
+
+  // event.stopPropagation() // 이벤트 버블링 방지
 
 }
 
@@ -56,10 +58,21 @@ useEffect(() =>{
     setBookmark(true)
   } else if(!getLocalStorage) return
 
+  // esc키 클릭 시, dialog 창 닫기
+  const escKeyDownCloseDialog = (event: any) => {
+    console.log("함수 호출1")
+    if(event.key === 'Escape'){
+      closeDialog()
+    }
+  }
+  //위에 만들어놓은 escKeyDownCloseDialog를 키다운 했을 때, 이벤트로 등록 및 해지
+  window.addEventListener("keydown", escKeyDownCloseDialog)
+  return () => window.removeEventListener('keydown',escKeyDownCloseDialog)
+
 },[])
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={closeDialog}>
       <div className={styles.container__dialog}>
         <div className={styles.container__dialog__header}>
           <div className={styles.close}>

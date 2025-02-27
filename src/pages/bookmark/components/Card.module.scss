@@ -56,6 +56,14 @@
 
         .value{
         color: $color-gray-500;
+
+        width: 112px;
+
+        overflow: hidden;       // << 해당 css의미 찾아보기
+        white-space: nowrap;
+        text-overflow: ellipsis;  
+        word-break: break-all;
+
         }
 
       }

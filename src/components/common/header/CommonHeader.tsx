@@ -5,20 +5,24 @@ function CommonHeader() {
 
   const navigate = useNavigate()
 
-  const moveToPage = () => {
+  const moveToPage = (filter: string) => {
+    if(filter === 'main') {
+      navigate('/')
+    } else if(filter==='bookmark'){
     navigate('/bookmark')
-
+    }
   }
+
 
   return (
     <header className={styles.header}>
-      <div className={styles.header__logoBox}>
+      <div className={styles.header__logoBox} onClick ={() => {moveToPage('main')}}>
         <img src="../public/assets/images/image-logo.png" alt="" className={styles.header__logoBox__logo} />
         <span className={styles.header__logoBox__title}>Warehouse-location</span>
       </div>
       <div className={styles.header__profileBox}>
         <button className={styles.header__profileBox__button}>사진제출</button>
-        <button className={styles.header__profileBox__button} onClick = {moveToPage}>북마크</button>
+        <button className={styles.header__profileBox__button} onClick ={()=> {moveToPage('bookmark')}}>북마크</button>
         <span className={styles.header__profileBox__userName}>
           santino | santinomin
         </span>
