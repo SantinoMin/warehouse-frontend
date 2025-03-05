@@ -26,7 +26,7 @@ function index() {
       const result = imgSelector.contents.results.map((card: CardDTO) => {
           return <Card data={card} key={card.id} handleDialog={setOpen} handleSetData={setImgData}/>;
     })  
-    return result
+    return result 
   } else {
         return <Loading />
           
