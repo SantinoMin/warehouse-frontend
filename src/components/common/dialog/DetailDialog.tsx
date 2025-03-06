@@ -6,6 +6,7 @@ import styles from './DetailDialog.module.scss'
 
 toastConfig(
   { theme: 'dark',
+    duration: 5000,
     position: 'top-right',
    })
 
@@ -16,7 +17,7 @@ interface Props {
 
 function DetailDialog({ data, handleDialog }: Props) {
     const [bookmark, setBookmark] = useState(false)
-    
+
     // 다이얼로그 끄기
     const closeDialog = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
         handleDialog(false)
@@ -66,7 +67,9 @@ function DetailDialog({ data, handleDialog }: Props) {
     }, [])
 
     return (
-        <div className={styles.container} onClick={closeDialog}>
+        <div className={styles.container} 
+        // onClick={closeDialog}
+        >
             <div className={styles.container__dialog}>
                 <div className={styles.container__dialog__header}>
                     <div className={styles.close}>

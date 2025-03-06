@@ -1,12 +1,12 @@
 import DetailDialog from '@/components/common/dialog/DetailDialog';
 import CommonFooter from '@/components/common/footer/CommonFooter';
-import CommonNav from '@/components/common/navigation/CommonNav';
 import CommonSearchBar from '@/components/common/searchBar/CommonSearchBar';
 import { useMemo, useState } from 'react';
 import CommonHeader from '../../components/common/header/CommonHeader';
 import Loading from './components/Loading';
 //CSS
 
+import CommonSideBar from '@/components/common/sidebar/CommonSideBar';
 import { imageData } from '@/recoil/selectors/imageSelector';
 import { useRecoilValueLoadable } from 'recoil';
 import Card from './components/Card';
@@ -41,7 +41,8 @@ function index() {
       {/* 공통 헤더 UI 부분 */}
       <CommonHeader />
       {/* 공통 네비게이션 UI 부분 */}
-      <CommonNav />
+      {/* <CommonNav /> */}
+      <CommonSideBar width={320} children={'필드값들'}/>
       <div className={styles.page__contents}>
         <div className={styles.page__contents__introbox}>
           <div className={styles.page__contents__wrapper}>
@@ -54,11 +55,10 @@ function index() {
             <CommonSearchBar />
           </div>
         </div>
-        <div className={styles.page__contents__imageBox}>{CARD_LIST}</div>
+        {/* <div className={styles.page__contents__imageBox}>{CARD_LIST}</div> */}
       </div>
 
       {/* 공통 푸터 UI 부분 */}
-      {/* <CommonFooter /> */}
 
       {/* Suspense 비동기 작업이 완료될 때까지 로딩 상태를 표시 */}
       {/* <Suspense fallback={<div>로딩 중...</div>}> */}

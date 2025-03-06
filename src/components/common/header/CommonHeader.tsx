@@ -17,15 +17,16 @@ function CommonHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.header__logoBox} onClick ={() => {moveToPage('main')}}>
-        <img src="../public/assets/images/image-logo.png" alt="" className={styles.header__logoBox__logo} />
+        <img src="src/assets/images/warehouse.png" alt="" className={styles.header__logoBox__logo} />
         <span className={styles.header__logoBox__title}>Warehouse-location</span>
       </div>
       <div className={styles.header__profileBox}>
-        <button className={styles.header__profileBox__button}>사진제출</button>
-        <button className={styles.header__profileBox__button} onClick ={()=> {moveToPage('bookmark')}}>북마크</button>
+        <button className={styles.header__profileBox__button}>프로필</button>
+        <button className={styles.header__profileBox__userName} onClick ={()=> {moveToPage('bookmark')}}>더보기</button>
         <span className={styles.header__profileBox__userName}>
-          santino | santinomin
+          santino | 매니저
         </span>
+        <img src="src/assets/images/workers.png" alt="no profile Image" className={styles.header__profileBox__profile}/>
       </div>
     </header>
   );

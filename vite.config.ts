@@ -25,6 +25,8 @@ export default defineConfig({
         additionalData: `
           @use "@/assets/styles/main.scss" as *;
         `,
+        // api: 'modern-compiler'
+        silenceDeprecations: ["legacy-js-api"]
       },
     },
   },
