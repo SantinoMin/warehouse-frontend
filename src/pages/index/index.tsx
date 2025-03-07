@@ -42,7 +42,9 @@ function index() {
       <CommonHeader />
       {/* 공통 네비게이션 UI 부분 */}
       {/* <CommonNav /> */}
-      <CommonSideBar width={320} children={'필드값들'}/>
+
+      <CommonSideBar />
+
       <div className={styles.page__contents}>
         <div className={styles.page__contents__introbox}>
           <div className={styles.page__contents__wrapper}>

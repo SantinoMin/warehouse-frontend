@@ -1,0 +1,36 @@
+[
+  {
+    "index": 0,
+    "label": "상품 관리",
+    "path": "/products",
+    "children": [
+      {
+        "index" : 0,
+        "label": "상품 등록",
+        "path": "/products/add"
+      },
+      {
+        "index" : 1,
+        "label": "상품 수정/삭제",
+        "path": "/products/edit"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "label": "로케이션 관리",
+    "path": "/orders",
+    "children": [
+      {
+        "index" : 0,
+        "label": "구역 조회",
+        "path": "/location/add"
+      },
+      {
+        "index" : 1,
+        "label": "구역 등록/삭제",
+        "path": "/location/edit"
+      }
+    ]
+  }
+]

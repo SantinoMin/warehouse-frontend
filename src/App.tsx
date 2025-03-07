@@ -8,10 +8,14 @@ function App() {
   return (
     <RecoilRoot>
     <BrowserRouter>
+    
       <Routes>
         <Route index path="/" element={<MainPage />}></Route>
         <Route index path="/search/:id" element={<MainPage />}></Route>
         <Route index path="/bookmark" element={<BookmarkPage />}></Route>
+        {/* <Route index path="/product" element={<Product />}></Route>
+        <Route index path="/location" element={<Location />}></Route> */}
+
       </Routes>
     </BrowserRouter>
     </RecoilRoot>

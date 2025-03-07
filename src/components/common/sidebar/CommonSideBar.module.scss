@@ -1,46 +1,113 @@
 .container {
-  background-color: #E3ECF1;
-}
-.sidebar {
-  z-index: 99;
-  background-color: #E3ECF1;
-  border-right: 4px solid #202020;
+
+&__sidebar {
+  width: 300px;
+  height: 100%; 
+
+  z-index: 100;
+  background-color: #151a2d;
+  border-right: 2px solid #202020;
   position: fixed;
-  top: 0;
-  bottom: 0;
+  // bottom: 0;
   left: 0;
   transition: transform 0.4s ease;
-  color: #202020;
-  height: 100%;
-}
-.button {
+  // height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+
+  padding-top: 40px;
+
+
+  // 열고 닫는 버튼
+&__button {
   position:relative;  
-  left: 330px; 
-  top: 10px;
-  width: 80px;
-  height: 80px;
+  left: 290px; // 버튼의 위치
+  // width: 90px;
+  // height: 60px;
   z-index: 100;
   transition: transform 0.8s ease;
   border: 2px solid #202020;
   border-radius: 40px;
   overflow: hidden;
-  background-color: yellow;
-  margin-top: 100px;
-  
+  background-color: $color-white-000;
+  // margin-top: 100px;
+  // margin-left: 130px;
+
+  &__xbutton{
+  // width: 80px;
+  // height: 80px;
 }
 
-// 이미지
-.openBtn {
-  width: 50%;
-  height: 50%;
+    // 이미지
+    &__openBtn {
+      // width: 30px;
+      // height: 30px;
+      // padding-left: 20px;
+      pointer-events: auto;
+    }
 
 }
-.content {
-  padding: 40px 40px 0 20px;
-  position: relative;
-  width: 100%;
+
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    position: relative;
+
+    height: 500px;
+    width: 400px;
+    left: 50px;
+
+    background-color:bisque;
+
+    gap: 20px;
+
+    // 사이드바 메인 메뉴 부분(상품 관리, 로케이션 관리)
+    &__sidebar__menu__item {
+
+      padding: 10px;
+      text-decoration: none;
+      color: $color-white-000;
+
+      font-weight: bold;
+      font-size: 24px;
+      font-family: 'Roboto', sans-serif;
+
+      cursor: pointer;
+
+      gap: 20px;
+      // background-color: #ffffff;
+
+
+
+      // 사이드바 sub 메뉴 부분
+      &__childItem{
+          display: flex;
+
+          margin-top: 15px;
+          margin-bottom: 10px;
+          margin-left: 6px;
+          font-size: 20px;
+
+          color: $color-white-000;
+
+          gap: 20px;
+
+          text-decoration: none;
+
+    
+      }
+    
+   
+    
+    }
 }
-// .icon {
-//   margin: 0;
-//   color: #202020;
-// }
+}
+
+    
+}
