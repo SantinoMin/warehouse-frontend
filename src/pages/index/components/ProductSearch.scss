@@ -1,0 +1,11 @@
+@use "@/assets/styles/main.scss" as *;
+
+.page__contents {
+  // ProductSearch 페이지의 추가 스타일
+  padding: 20px;
+
+  input {
+    margin-top: 20px;
+    padding: 10px;
+  }
+}

@@ -1,57 +1,43 @@
 .container {
 
 &__sidebar {
-  width: 300px;
-  height: 100%; 
-
-  z-index: 100;
-  background-color: #151a2d;
-  border-right: 2px solid #202020;
+  background-color: transparent;
+  
+  // border-right: 4px solid #202020;
   position: fixed;
-  // bottom: 0;
+  top: 0;
+  bottom: 0;
   left: 0;
-  transition: transform 0.4s ease;
-  // height: 100%;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-
-  padding-top: 40px;
+  transition: 0.4s ease;
+  color: #202020;
+  height: 100%;
+  z-index: 99;
 
 
   // 열고 닫는 버튼
 &__button {
-  position:relative;  
-  left: 290px; // 버튼의 위치
-  // width: 90px;
-  // height: 60px;
-  z-index: 100;
-  transition: transform 0.8s ease;
+  position: relative;
+  top: 120px;
+  width: 60px;
+  height: 60px;
+  z-index: 99;
+  transition: 0.8s ease;
   border: 2px solid #202020;
   border-radius: 40px;
   overflow: hidden;
-  background-color: $color-white-000;
-  // margin-top: 100px;
-  // margin-left: 130px;
 
-  &__xbutton{
-  // width: 80px;
-  // height: 80px;
+&__xbutton{
+  width: 100%;
+  height: 100%;
 }
 
-    // 이미지
-    &__openBtn {
-      // width: 30px;
-      // height: 30px;
-      // padding-left: 20px;
-      pointer-events: auto;
-    }
-
+ &__openBtn {
+  width: 60%;
+  height: 60%;
+}
 }
 
-
+// 사이드바의 카테고리 부분
   &__content {
     display: flex;
     flex-direction: column;
@@ -59,12 +45,14 @@
 
     position: relative;
 
-    height: 500px;
-    width: 400px;
-    left: 50px;
+    height: 100%;
+    width: 280px;
+    margin-top: 40px;
+    padding-left: 15px;
+    padding-top: 30px;
+    border-radius: 6px;
 
-    background-color:bisque;
-
+    background-color: $color-black-900;
     gap: 20px;
 
     // 사이드바 메인 메뉴 부분(상품 관리, 로케이션 관리)
@@ -81,9 +69,6 @@
       cursor: pointer;
 
       gap: 20px;
-      // background-color: #ffffff;
-
-
 
       // 사이드바 sub 메뉴 부분
       &__childItem{

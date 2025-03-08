@@ -18,7 +18,7 @@ function CommonHeader() {
     <header className={styles.header}>
       <div className={styles.header__logoBox} onClick ={() => {moveToPage('main')}}>
         <img src="src/assets/images/warehouse.png" alt="" className={styles.header__logoBox__logo} />
-        <span className={styles.header__logoBox__title}>Warehouse-location</span>
+        <span className={styles.header__logoBox__title}>Lager Logistik</span>
       </div>
       <div className={styles.header__profileBox}>
         <button className={styles.header__profileBox__button}>프로필</button>
