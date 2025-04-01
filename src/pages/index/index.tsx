@@ -1,11 +1,11 @@
 // src/pages/index/index.tsx
-import React, { useState, useMemo } from 'react';
-import Layout from '@/components/layout/Layout';
 import DetailDialog from '@/components/common/dialog/DetailDialog';
-import Loading from './components/Loading';
+import Layout from '@/components/layout/Layout';
 import { imageData } from '@/recoil/selectors/imageSelector';
+import React, { useMemo, useState } from 'react';
 import { useRecoilValueLoadable } from 'recoil';
 import Card from './components/Card';
+import Loading from './components/Loading';
 import { CardDTO } from './types/card';
 import ProductSearch from './components/ProductSearch';
 

@@ -1,7 +1,7 @@
 // src/pages/index/components/ProductSearch.tsx
-import React, { useState } from 'react';
-import Layout from '@/components/layout/Layout';
 import CommonSearchBar from '@/components/common/searchBar/CommonSearchBar';
+import Layout from '@/components/layout/Layout';
+import React, { useState } from 'react';
 import './ProductSearch.scss';
 
 const ProductSearch: React.FC = () => {
@@ -13,7 +13,7 @@ const ProductSearch: React.FC = () => {
   };
 
   return (
-    <Layout>
+    // <Layout>
       <div className="page__contents">
         <div className="page__contents__introbox">
           <div className="page__contents__wrapper">
@@ -33,7 +33,7 @@ const ProductSearch: React.FC = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    // </Layout>
   );
 };
 

@@ -1,7 +1,7 @@
 import CommonFooter from '@/components/common/footer/CommonFooter';
-import CommonHeader from '@/components/common/header/CommonHeader';
-import CommonSideBar from '@/components/common/sidebar/CommonSideBar';
 import React, { ReactNode } from 'react';
+import CommonHeader from '../common/header/CommonHeader';
+import CommonSideBar from '../common/sidebar/CommonSideBar';
 import './Layout.scss';
 
 interface LayoutProps {
