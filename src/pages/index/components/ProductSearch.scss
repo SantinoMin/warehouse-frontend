@@ -1,11 +1,73 @@
 @use "@/assets/styles/main.scss" as *;
 
 .page__contents {
-  // ProductSearch 페이지의 추가 스타일
+  width: 100%;
+  height: 100%;
   padding: 20px;
+  position: relative;
+  min-height: 500px;
+
+  &__introbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .introbox__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    margin: 20px;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .wrapper__title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .wrapper__desc {
+      font-size: 16px;
+      color: #666;
+    }
+  }
 
   input {
     margin-top: 20px;
     padding: 10px;
   }
 }
+
+.page__contents__introbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper__search-button {
+  color: goldenrod;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+

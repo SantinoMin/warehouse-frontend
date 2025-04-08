@@ -1,6 +1,5 @@
-// src/pages/index/components/ProductSearch.tsx
+import warehouseImage from '@/assets/images/warehouse-search.png';
 import CommonSearchBar from '@/components/common/searchBar/CommonSearchBar';
-import Layout from '@/components/layout/Layout';
 import React, { useState } from 'react';
 import './ProductSearch.scss';
 
@@ -16,6 +15,7 @@ const ProductSearch: React.FC = () => {
     // <Layout>
       <div className="page__contents">
         <div className="page__contents__introbox">
+          <img src={warehouseImage} alt="warehouse" className="introbox__image" />
           <div className="page__contents__wrapper">
             <span className="wrapper__title">상품 검색</span>
             <span className="wrapper__desc">
@@ -24,12 +24,13 @@ const ProductSearch: React.FC = () => {
               상품의 정보와 위치를 보여줍니다.
             </span>
             <CommonSearchBar />
-            <input
+            {/* <input
+              title="검색어 입력"
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button onClick={handleSearch}>검색</button>
+            /> */}
+            <button onClick={handleSearch} className="wrapper__search-button">검색</button>
           </div>
         </div>
       </div>
