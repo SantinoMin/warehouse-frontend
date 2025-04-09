@@ -1,0 +1,148 @@
+.pageContents {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: relative;
+  min-height: 500px;
+
+  &Introbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &Wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    margin: 20px;
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.wrapperTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wrapperDesc {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.searchBarInput {
+  width: 80%;
+  height: 60px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+    border-color: goldenrod;
+  }
+}
+
+.wrapperSearchButton {
+  color: goldenrod;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: white;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.searchResults {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.productItem {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pageButton {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+
+  &.active {
+    background: goldenrod;
+    color: white;
+    border-color: goldenrod;
+  }
+} 
