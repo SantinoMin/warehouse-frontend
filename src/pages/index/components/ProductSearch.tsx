@@ -73,12 +73,12 @@ const ProductSearch: React.FC = () => {
   
   return (
     // <Layout>
-      <div className={styles.pageContents}>
-        <div className={styles.pageContentsIntrobox}>
-          <img src={warehouseImage} alt="warehouse" className={styles.pageContentsImage} />
-          <div className={styles.pageContentsWrapper}>
-            <span className={styles.wrapperTitle}>상품 검색</span>
-            <span className={styles.wrapperDesc}>
+      <div className={styles.page__contents}>
+        <div className={styles.page__contents__introbox}>
+          <img src={warehouseImage} alt="warehouse" className={styles.page__contents__image} />
+          <div className={styles.page__contents__wrapper}>
+            <span className={styles.page__contents__title}>상품 검색</span>
+            <span className={styles.page__contents__desc}>
               상품명을 검색하세요.
               <br />
               상품의 정보와 위치를 보여줍니다.
@@ -88,26 +88,26 @@ const ProductSearch: React.FC = () => {
             <input
               type="text"
               placeholder="찾으실 상품을 검색하세요"
-              className={styles.searchBarInput}
+              className={styles.page__contents__input}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyPress={handleKeyPress}
             />
 
-            {error && <div className={styles.errorMessage}>{error}</div>}
+            {error && <div className={styles.page__contents__error}>{error}</div>}
 
             <button 
               onClick={() => handleSearch(0)} 
-              className={styles.wrapperSearchButton}
+              className={styles.page__contents__button}
               disabled={isLoading}
             >
               {isLoading ? '검색 중...' : '검색'}
             </button>
 
             {/* 검색 결과 표시 */}
-            <div className={styles.searchResults}>
+            <div className={styles.page__contents__results}>
               {products.map(product => (
-                <div key={product.id} className={styles.productItem}>
+                <div key={product.id} className={styles.page__contents__item}>
                   <h3>{product.name}</h3>
                   <p>가격: {product.price}원</p>
                 </div>
@@ -116,12 +116,14 @@ const ProductSearch: React.FC = () => {
 
             {/* 페이지네이션 */}
             {totalPages > 0 && (
-              <div className={styles.pagination}>
+              <div className={styles.page__contents__pagination}>
                 {Array.from({ length: totalPages }, (_, i) => (
                   <button
                     key={i}
                     onClick={() => handlePageChange(i)}
-                    className={`${styles.pageButton} ${currentPage === i ? styles.active : ''}`}
+                    className={`${styles.page__contents__page} ${
+                      currentPage === i ? styles.page__contents__page_active : ''
+                    }`}
                   >
                     {i + 1}
                   </button>
