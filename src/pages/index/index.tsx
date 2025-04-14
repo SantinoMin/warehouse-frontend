@@ -2,42 +2,46 @@
 import CommonFooter from '@/components/common/footer/CommonFooter';
 import CommonHeader from '@/components/common/header/CommonHeader';
 import CommonSideBar from '@/components/common/sidebar/CommonSideBar';
-import { imageData } from '@/recoil/selectors/imageSelector';
-import React, { useState } from 'react';
-import { useRecoilValueLoadable } from 'recoil';
+import React from 'react';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import ProductRegister from './components/ProductRegister';
 import ProductSearch from './components/ProductSearch';
 import './index.scss';
-import { CardDTO } from './types/card';
+
+// 메인 페이지 컴포넌트
+const MainContent: React.FC = () => {
+  return (
+    <div className="main__content">
+      <h1>창고 관리 시스템에 오신 것을 환영합니다</h1>
+      <p>왼쪽 사이드바에서 원하는 메뉴를 선택하세요.</p>
+    </div>
+  );
+};
 
 const Index: React.FC = () => {
-  const imgSelector = useRecoilValueLoadable(imageData);
-  const [imgData, setImgData] = useState<CardDTO>();
-  const [open, setOpen] = useState<boolean>(false);
-
-  // const cardList = useMemo(() => {
-  //   if (imgSelector.state === 'hasValue') {
-  //     return imgSelector.contents.results.map((card: CardDTO) => (
-  //       <Card data={card} key={card.id} handleDialog={setOpen} handleSetData={setImgData} />
-  //     ));
-  //   } else {
-  //     return <Loading />;
-  //   }
-  // }, [imgSelector]);
-
   return (
-    <div className="page">
-      <CommonHeader />
+    <Router>
+      <div className="page">
+        <CommonHeader />
 
-      <div className="main-content">
-        <CommonSideBar />
-        <div className="content-wrapper">
-          <ProductSearch />
-          {/* {open && <DetailDialog data={imgData} handleDialog={setOpen} />} */}
+        <div className="page__main__content">
+          <div className="page__sidebar">
+            <CommonSideBar />
+          </div>
+          
+          <div className="page__content__wrapper">
+            <Routes>
+              <Route path="/" element={<MainContent />} />
+              <Route path="/products" element={<ProductSearch />} />
+              <Route path="/product/register" element={<ProductRegister />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
         </div>
+        
+        <CommonFooter />
       </div>
-      
-      <CommonFooter />
-    </div>
+    </Router>
   );
 };
 

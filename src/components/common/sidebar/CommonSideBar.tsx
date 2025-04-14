@@ -30,8 +30,8 @@ const CommonSideBar = () => {
       index: 0,
       label: "상품 관리",
       children: [
-        { index: 0, label: "상품 조회", path: "/product/search" },
-        { index: 1, label: "상품 등록", path: "/product/register" },
+
+        { index: 0, label: "상품 등록", path: "/product/register" },
       ],
     },
     {
@@ -79,11 +79,11 @@ const CommonSideBar = () => {
   };
   
   // 사이드바 외부 클릭시 닫히는 함수
-  const handleClose = async (e:any) => {
+  const handleClose = async (e: MouseEvent) => {
     if (!side.current) return; 
 
-    let sideArea = side.current;
-    let sideChildren = sideArea.contains(e.target);
+    const sideArea = side.current;
+    const sideChildren = sideArea.contains(e.target as Node);
     if (isOpen && (!sideChildren)) {
       console.log(width)
        setX(width); 
