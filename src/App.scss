@@ -1,0 +1,46 @@
+@use '@/assets/styles/main.scss' as *;
+
+// 여기서는 스타일링 목적은 아니고, 전체 해더,바디,푸터의 비율만 설정하는 용도
+// !! css적용하려면 내부 컴포넌트에 해당하는 scss파일에서 설정하기 
+
+// 전체 페이지
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+// 페이지 헤더
+.page__header {
+  flex: 0 0 10%;
+  min-height: 60px;
+}
+
+// 페이지 전체 바디 부분 
+.page__main {
+  flex: 1 0 80%;
+  display: flex;
+  min-height: 0; // flexbox overflow 방지
+}
+
+// 페이지 사이드 바(바디의 일부)
+.page__sidebar {
+  width: 220px;
+  background: #eaeaea;
+  min-width: 180px;
+}
+
+// 페이지 컨텐츠(바디의 일부)
+.page__content {
+  flex: 1;
+  background: #fff;
+  overflow-y: auto;
+}
+
+// 페이지의 푸터 부분
+.page__footer {
+  flex: 0 0 10%;
+  min-height: 60px;
+  background: #f8f8f8;
+}

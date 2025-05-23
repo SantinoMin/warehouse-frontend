@@ -21,7 +21,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // 전역 SCSS 파일 추가
+        // 전역 SCSS 파일 추가 (main.scss에서 전역 scss설정되어 있어서, 추가로 scss 설정 안 해도 됨)
         additionalData: `
           @use "@/assets/styles/main.scss" as *;
         `,

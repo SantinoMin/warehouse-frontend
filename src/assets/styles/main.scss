@@ -4,6 +4,8 @@
 @forward './color';
 @forward './font';
 
+
+// main.scss에서 전역 페이지의 css를 설정 해둠
 * {
   padding: 0;
   margin: 0;
@@ -12,4 +14,5 @@
 
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
+
 }
